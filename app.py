@@ -24,9 +24,9 @@ def plate_detection():
             break
         else:
             results = model(frame)
-            frame = np.squeeze(results.render())
             reader = easyocr.Reader(['bn'], gpu=True)
             result = reader.readtext(frame)
+            frame = np.squeeze(results.render())
 
             text = ''
             for string in result:
