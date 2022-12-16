@@ -4,16 +4,13 @@ import torch
 import easyocr
 from PIL import ImageFont, ImageDraw, Image, ImageGrab
 import numpy as np
-import time
 
 frame_window = st.image([])
-camera = cv2.VideoCapture(0)
 
 
 def plate_detection():
     path = 'best.pt'
-    model = torch.hub.load('ultralytics/yolov5',
-                           'custom', path, force_reload=True)
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path, force_reload=True)
     frame_window = st.image([])
     capture = cv2.VideoCapture(0)
     plateholder = st.empty()
@@ -60,9 +57,9 @@ def plate_detection():
             """
             st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-
 try:
     st.title("Yolo Plate")
     plate_detection()
 except:
-    pass
+    st.title('SOMETHING WENT WRONG ;(')
+
