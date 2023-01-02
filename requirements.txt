@@ -59,6 +59,7 @@ ninja==1.11.1
 numpy==1.23.5
 oauthlib==3.2.2
 opencv-python
+opencv-python-headless
 opt-einsum==3.3.0
 packaging==22.0
 pandas==1.5.2
