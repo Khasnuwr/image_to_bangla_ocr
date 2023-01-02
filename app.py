@@ -5,7 +5,7 @@ import easyocr
 from PIL import ImageFont, ImageDraw, Image, ImageGrab
 import numpy as np
 
-frame_window = st.image([])
+
 
 
 def plate_detection():
@@ -56,7 +56,7 @@ def plate_detection():
             </style>
             """
             st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
+     
 try:
     st.title("Yolo Plate")
     plate_detection()
