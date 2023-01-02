@@ -65,14 +65,5 @@ st.title("Yolo Plate")
 
 
 
-class VideoProcessor:
-	def recv(self, frame):
-		frm = frame.to_ndarray(format="bgr24")
-
-		
-
-		return av.VideoFrame.from_ndarray(frm, format='bgr24')
-
-
 #st.title('SOMETHING WENT WRONG ;(')
 webrtc_streamer(key="key")
