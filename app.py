@@ -57,9 +57,9 @@ def plate_detection():
             """
             st.markdown(hide_streamlit_style, unsafe_allow_html=True)
      
-try:
-    st.title("Yolo Plate")
-    plate_detection()
-except:
-    st.title('SOMETHING WENT WRONG ;(')
+
+st.title("Yolo Plate")
+plate_detection()
+
+st.title('SOMETHING WENT WRONG ;(')
 
