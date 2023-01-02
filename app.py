@@ -64,7 +64,6 @@ st.title("Yolo Plate")
 #plate_detection()
 
 
-cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 class VideoProcessor:
 	def recv(self, frame):
@@ -76,8 +75,7 @@ class VideoProcessor:
 
 
 #st.title('SOMETHING WENT WRONG ;(')
-webrtc_streamer(key="key", video_processor_factory=VideoProcessor,
-				rtc_configuration=RTCConfiguration(
+webrtc_streamer(key="key", rtc_configuration=RTCConfiguration(
 					{"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
 					)
 	)
