@@ -1,6 +1,4 @@
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer, RTCConfiguration
-import av
 import cv2
 import torch
 import easyocr
@@ -61,9 +59,9 @@ def plate_detection():
      
 
 st.title("Yolo Plate")
-#plate_detection()
+plate_detection()
 
 
 
 #st.title('SOMETHING WENT WRONG ;(')
-webrtc_streamer(key="key")
+
