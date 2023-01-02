@@ -61,5 +61,5 @@ def plate_detection():
 st.title("Yolo Plate")
 plate_detection()
 
-st.title('SOMETHING WENT WRONG ;(')
+#st.title('SOMETHING WENT WRONG ;(')
 
