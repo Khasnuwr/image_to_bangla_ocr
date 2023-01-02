@@ -75,7 +75,4 @@ class VideoProcessor:
 
 
 #st.title('SOMETHING WENT WRONG ;(')
-webrtc_streamer(key="key", rtc_configuration=RTCConfiguration(
-					{"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
-					)
-	)
+webrtc_streamer(key="key")
