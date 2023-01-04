@@ -18,7 +18,7 @@ def plate_detection():
     path = 'best.pt'
     model = torch.hub.load('ultralytics/yolov5', 'custom', path, force_reload=True)
     frame_window = st.image([])
-    capture = cv2.VideoCapture(-1,cv2.CAP_DSHOW)
+    capture = cv2.VideoCapture(1,cv2.CAP_DSHOW)
     plateholder = st.empty()
 
     while True:
