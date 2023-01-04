@@ -5,7 +5,13 @@ import easyocr
 from PIL import ImageFont, ImageDraw, Image, ImageGrab
 import numpy as np
 
-
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 def plate_detection():
@@ -22,13 +28,13 @@ def plate_detection():
             break
         else:
             results = model(frame)
-            reader = easyocr.Reader(['bn'], gpu=True)
-            result = reader.readtext(frame)
+#             reader = easyocr.Reader(['bn'], gpu=True)
+#             result = reader.readtext(frame)
             frame = np.squeeze(results.render())
 
             text = ''
-            for string in result:
-                text = text+string[1]+'\n'
+#             for string in result:
+#                 text = text+string[1]+'\n'
 
             plateholder.empty()
             plateholder.text(text)
@@ -49,13 +55,7 @@ def plate_detection():
             frame = buffer.tobytes()
             frame_window.image(frame)
 
-            hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-            st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+            
      
 
 st.title("Numberplate Detect and Read System")
