@@ -5,7 +5,10 @@ import easyocr
 from PIL import ImageFont, ImageDraw, Image, ImageGrab
 import numpy as np
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1efa4fab0d8f862ccda87f22391f5e77698b495d
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -13,6 +16,7 @@ hide_streamlit_style = """
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+<<<<<<< HEAD
 
 
 
@@ -29,6 +33,8 @@ def read_str_from_img(frame):
     # plate_holder.empty()
 
 
+=======
+>>>>>>> 1efa4fab0d8f862ccda87f22391f5e77698b495d
 
 
 def plate_detection():
@@ -59,6 +65,7 @@ def plate_detection():
 
         else:
             results = model(frame)
+<<<<<<< HEAD
             if scan:
                 scan = False
                 read_str_from_img(frame)
@@ -69,6 +76,15 @@ def plate_detection():
 
             frame = np.squeeze(results.render())
 
+=======
+#             reader = easyocr.Reader(['bn'], gpu=True)
+#             result = reader.readtext(frame)
+            frame = np.squeeze(results.render())
+
+            text = ''
+#             for string in result:
+#                 text = text+string[1]+'\n'
+>>>>>>> 1efa4fab0d8f862ccda87f22391f5e77698b495d
 
 
             # codes bellow commented for future development
@@ -87,6 +103,7 @@ def plate_detection():
             frame = buffer.tobytes()
             frame_window.image(frame)
 
+<<<<<<< HEAD
 
             # STOP AND DESTROY CAPTURE FUNCTION
 
@@ -123,6 +140,17 @@ print(choice)
 if choice == "Realtime detection":
     st.title("Numberplate Read and Detect System")
     plate_detection()
+=======
+            
+     
+
+st.title("Numberplate Detect and Read System")
+plate_detection()
+
+
+
+#st.title('SOMETHING WENT WRONG ;(')
+>>>>>>> 1efa4fab0d8f862ccda87f22391f5e77698b495d
 
 elif choice == "Read from Picture":
     st.text("Coming Soon 😎")
